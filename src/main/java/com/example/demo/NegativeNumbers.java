@@ -17,21 +17,14 @@ public class NegativeNumbers {
         int Columns = Integer.parseInt(READER.readLine());
         //2 dim matrix created
         int[][] Matrix = new int[Rows][Columns];
+        //calling method to fill the matrix in
         matrixFill(Matrix);
+        System.out.println("Initial Matrix: ");
+        //calling method to display the initial matrix
         matrixDisplay(Matrix);
-        //function to find nd display negatives in the array
-        int counter = 0; // counter which will be changed, once match in if statement found it will grow +1
-        for (int i = 0; i < Matrix.length; i++) {
-            for (int j = 0; j < Matrix[i].length; j++) {
-                if (Matrix[i][j] < 0 ) {
-                    counter = counter + 1;
-                    System.out.print("(" + i + ", " + j + "): Arrays cage, has value " + Matrix[i][j] + "; ");
-                }
-                System.out.println();
-            }
-        }
-        //printing out Negatives number detected quantity
-        System.out.println("Negatives detected: " + counter);
+        System.out.println("Negative Numbers in the Matrix are located: ");
+        //calling method to find and display negative numbers in matrix
+        negativeNumbersDetection(Matrix);
     }
     //Method to fill the initial matrix from user`s input
     public static void matrixFill (int[][] Matrix) throws IOException {
@@ -45,11 +38,22 @@ public class NegativeNumbers {
     }
     //Method to display the matrix by 2 for construction
     public static void matrixDisplay (int[][] Matrix) {
-        for (int i = 0; i < Matrix.length; i++) {
-            for (int j = 0; j < Matrix[i].length; j++) {
-                System.out.print(Matrix[i][j] + "\t");//Used tabulate to have better User experience
+        for (int[] matrix : Matrix) {
+            for (int i : matrix) {
+                System.out.print(i + "\t");//Used tabulate to have better User experience
             }
             System.out.println();
+        }
+    }
+    //Method to find and display negatives in the array
+    public static void negativeNumbersDetection (int[][] Matrix) {
+        for (int i = 0; i < Matrix.length; i++) {
+            for (int j = 0; j < Matrix[i].length; j++) {
+                if (Matrix[i][j] < 0 ) {
+                    System.out.print("(" + i + ", " + j + "): Arrays cage, has value " + Matrix[i][j] + "; ");
+                }
+                System.out.println();
+            }
         }
     }
 }
