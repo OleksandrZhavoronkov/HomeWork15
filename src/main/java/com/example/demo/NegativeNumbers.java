@@ -50,7 +50,7 @@ public class NegativeNumbers {
         for (int i = 0; i < Matrix.length; i++) {
             for (int j = 0; j < Matrix[i].length; j++) {
                 if (Matrix[i][j] < 0 ) {
-                    System.out.print("(" + i + ", " + j + "): Arrays cage, has value " + Matrix[i][j] + "; ");
+                    System.out.print("Arrays cage: (" + i + ", " + j + ")" + " has value:" + Matrix[i][j] + "; ");
                 }
                 System.out.println();
             }
